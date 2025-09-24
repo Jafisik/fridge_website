@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>Chytrá lednice</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f0f0f0;
+      text-align: center;
+      padding: 50px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #status {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Chytrá lednice</h1>
+  <button onclick="updateStatus()">Zkontrolovat zásoby</button>
+  <div id="status">Zásoby zatím nezkontrolovány.</div>
+
+  <script>
+    function updateStatus(){
+      const status = document.getElementById("status");
+      status.textContent = "Zkontrolovano";
+    }
+  </script>
+</body>
+</html>
