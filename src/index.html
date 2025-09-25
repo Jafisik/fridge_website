@@ -42,11 +42,26 @@
   <div id="status">Zásoby zatím nezkontrolovány.</div>
   Přidat věc <button>+</button>
 
+  <input type="text" id="itemInput" placeholder="Název věci">
+<button onclick="addItem()">Přidat</button>
+
   <script>
     function updateStatus(){
       const status = document.getElementById("status");
       status.textContent = "Zkontrolovano";
     }
+    function addItem() {
+    const itemName = document.getElementById("itemInput").value;
+    fetch("/add_item", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name: itemName })
+    })
+    .then(res => res.text())
+    .then(msg => {
+      document.getElementById("status").textContent = msg;
+    });
+  }
   </script>
 </body>
 </html>
