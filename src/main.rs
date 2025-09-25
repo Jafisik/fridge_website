@@ -35,7 +35,7 @@ async fn main() -> std::io::Result<()> {
             .route("/", web::get().to(index))
             .route("/add_item", web::post().to(add_item))
     })
-    .bind("0.0.0.0:8080")?
+    .bind("100.81.131.123:8080")?
     .run()
     .await
 }
